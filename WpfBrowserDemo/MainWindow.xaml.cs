@@ -106,26 +106,6 @@ namespace WpfBrowserDemo
         public MainWindow()
         {
             InitializeComponent();
-
-            // 延迟设置WebBrowser控件，确保它已初始化
-            this.Loaded += (s, e) =>
-            {
-                //if (WebBrowser != null)
-                //{
-                //    // 设置WebBrowser控件的脚本错误抑制
-                //    WebBrowser.SuppressScriptErrors(true);
-                //}
-
-                //// 设置WebBrowser控件使用最新的渲染引擎
-                //SetWebBrowserCompatibility();
-
-                // 初始化WebView2
-                ////InitializeWebView2();
-                //if (CefSharpRadio.IsChecked.Value)
-                //{
-                //    CefBrowser.Address = Url;
-                //}
-            };
         }
 
         
