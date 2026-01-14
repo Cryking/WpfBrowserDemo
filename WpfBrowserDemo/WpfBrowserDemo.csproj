@@ -1,0 +1,706 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CefSharp.Wpf.HwndHost" Version="109.1.110" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2277.86" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\microsoft.web.webview2\1.0.2277.86\build\\..\runtimes\win-x64\native\WebView2Loader.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\af.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\am.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\ar.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\bg.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\bn.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\ca.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\cs.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\da.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\de.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\el.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\en-GB.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\en-US.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\es-419.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\es.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\et.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\fa.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\fi.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\fil.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\fr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\gu.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\he.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\hi.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\hr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\hu.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\id.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\it.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\ja.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\kn.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\ko.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\lt.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\lv.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\ml.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\mr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\ms.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\nb.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\nl.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\pl.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\pt-BR.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\pt-PT.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\ro.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\ru.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\sk.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\sl.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\sr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\sv.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\sw.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\ta.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\te.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\th.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\tr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\uk.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\ur.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\vi.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\zh-CN.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x86\locales\zh-TW.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\cefsharp.common.netcore\109.1.110\buildTransitive\..\runtimes\win-x86\lib\netcoreapp3.1\CefSharp.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\cefsharp.common.netcore\109.1.110\buildTransitive\..\runtimes\win-x86\lib\netcoreapp3.1\Ijwhost.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\af.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\am.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\ar.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\bg.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\bn.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\ca.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\cs.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\da.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\de.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\el.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\en-GB.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\en-US.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\es-419.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\es.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\et.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\fa.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\fi.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\fil.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\fr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\gu.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\he.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\hi.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\hr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\hu.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\id.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\it.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\ja.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\kn.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\ko.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\lt.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\lv.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\ml.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\mr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\ms.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\nb.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\nl.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\pl.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\pt-BR.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\pt-PT.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\ro.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\ru.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\sk.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\sl.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\sr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\sv.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\sw.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\ta.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\te.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\th.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\tr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\uk.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\ur.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\vi.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\zh-CN.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-x64\locales\zh-TW.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\cefsharp.common.netcore\109.1.110\buildTransitive\..\runtimes\win-x64\lib\netcoreapp3.1\CefSharp.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\cefsharp.common.netcore\109.1.110\buildTransitive\..\runtimes\win-x64\lib\netcoreapp3.1\Ijwhost.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\af.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\am.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\ar.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\bg.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\bn.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\ca.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\cs.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\da.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\de.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\el.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\en-GB.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\en-US.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\es-419.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\es.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\et.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\fa.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\fi.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\fil.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\fr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\gu.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\he.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\hi.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\hr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\hu.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\id.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\it.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\ja.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\kn.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\ko.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\lt.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\lv.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\ml.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\mr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\ms.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\nb.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\nl.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\pl.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\pt-BR.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\pt-PT.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\ro.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\ru.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\sk.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\sl.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\sr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\sv.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\sw.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\ta.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\te.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\th.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\tr.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\uk.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\ur.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\vi.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\zh-CN.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\chromiumembeddedframework.runtime\109.1.11\buildTransitive\..\CEF\win-arm64\locales\zh-TW.pak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\cefsharp.common.netcore\109.1.110\buildTransitive\..\runtimes\win-arm64\lib\netcoreapp3.1\CefSharp.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Administrator\.nuget\packages\cefsharp.common.netcore\109.1.110\buildTransitive\..\runtimes\win-arm64\lib\netcoreapp3.1\Ijwhost.dll" />
+  </ItemGroup>
+
+</Project>
