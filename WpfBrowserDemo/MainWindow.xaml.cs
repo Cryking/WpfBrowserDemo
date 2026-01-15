@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Policy;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -106,9 +107,44 @@ namespace WpfBrowserDemo
         public MainWindow()
         {
             InitializeComponent();
+            this.Loaded += MainWindow_Loaded;
+            //CefBrowser.LoadError += CefBrowser_LoadError;
         }
 
-        
+        //private void CefBrowser_LoadError(object sender, LoadErrorEventArgs args)
+        //{
+        //    if (args.ErrorCode == CefErrorCode.Aborted)
+        //    {
+        //        return;
+        //    }
+        //    if (args.ErrorCode == CefErrorCode.UnknownUrlScheme && args.Frame.Url.StartsWith("mailto"))
+        //    {
+        //        return;
+        //    }
+        //    var errorHtml = string.Format("<html><body><h2>Failed to load URL {0} with error {1} ({2}).</h2></body></html>",
+        //                                      args.FailedUrl, args.ErrorText, args.ErrorCode);
+
+        //    _ = args.Browser.SetMainFrameDocumentContentAsync(errorHtml);
+
+        //    //AddressChanged isn't called for failed Urls so we need to manually update the Url TextBox
+        //    this.Dispatcher.Invoke(() => UrlTextBox.Text = args.FailedUrl);
+        //}
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            //// 延迟显示浏览器，让CEF有时间初始化，减少黑屏闪烁
+            Task.Run(async () =>
+            {
+                await Task.Delay(2000);
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    if (CefBrowser != null)
+                    {
+                        CefBrowser.Visibility = Visibility.Visible;
+                    }
+                });
+            });
+        }
 
         private async void InitializeWebView2()
         {
@@ -342,10 +378,10 @@ namespace WpfBrowserDemo
             if (CefBrowser != null)
             {
                 CefBrowser.Visibility = Visibility.Visible;
-                
+
                 // 绑定加载状态变化事件
                 CefBrowser.LoadingStateChanged += CefSharpBrowser_LoadingStateChanged;
-                
+
                 // 重新导航到当前URL
                 if (!string.IsNullOrWhiteSpace(UrlTextBox?.Text ?? string.Empty))
                 {

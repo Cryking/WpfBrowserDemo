@@ -28,8 +28,12 @@
         <Grid Grid.Row="1">
             <!--<WebBrowser x:Name="WebBrowser" Margin="10" Navigated="WebBrowser_Navigated" Visibility="Collapsed"/>-->
             <wv2:WebView2 x:Name="WebView2" Margin="10" NavigationCompleted="WebView2_NavigationCompleted"  Visibility="Collapsed" />
-            <cef:ChromiumWebBrowser x:Name="CefBrowser"
-                                    Address="https://cn.bing.com"/>
+            <Grid x:Name="CefBrowserContainer" Margin="10">
+                <Border Background="White"/>
+                <cef:ChromiumWebBrowser x:Name="CefBrowser"
+                                          Address="https://cn.bing.com"
+                                          Visibility="Hidden"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
